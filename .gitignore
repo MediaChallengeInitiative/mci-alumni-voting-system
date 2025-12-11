@@ -1,0 +1,22 @@
+# Logs
+logs/*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploads (keep directory but ignore contents)
+images/*
+!images/.gitkeep
+
+# Environment specific
+*.local.php
+
+# Compiled files
+*.cache
