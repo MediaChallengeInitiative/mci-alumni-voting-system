@@ -1,13 +1,13 @@
 <?php
 /**
  * Database Connection for Admin Panel
- * With error handling for production environments
+ * Production credentials for cPanel
  */
 
 // Suppress connection errors from displaying (security)
 mysqli_report(MYSQLI_REPORT_OFF);
 
-$conn = new mysqli('localhost', 'root', '', 'alumni_voting_db');
+$conn = new mysqli('localhost', 'mciaorba_ebahindi', 'nm3H]Lg%2cmr', 'mciaorba_alumni_voting_db');
 
 if ($conn->connect_error) {
     // Log error instead of displaying
