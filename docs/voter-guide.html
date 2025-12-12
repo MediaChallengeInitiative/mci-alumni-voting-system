@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCI Alumni Awards 2025 - Voter Guide</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .trophy {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            color: #d4af37;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .header h2 {
+            font-size: 42px;
+            background: linear-gradient(135deg, #d4af37, #f4e4bc, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .header .year {
+            font-size: 28px;
+            color: #d4af37;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 16px;
+            color: #a0a0a0;
+            margin-top: 15px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            color: #d4af37;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title .icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #d4af37, #f4e4bc);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a1a2e;
+            font-weight: bold;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .step-card h3 {
+            font-size: 18px;
+            color: #f4e4bc;
+            margin-bottom: 15px;
+        }
+
+        .step-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .step-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #e0e0e0;
+            font-size: 15px;
+        }
+
+        .step-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .info-box h4 {
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .info-box p {
+            color: #e0e0e0;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .url-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .url-box .label {
+            color: #a0a0a0;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .url-box .url {
+            font-size: 24px;
+            color: #d4af37;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .event-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .event-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .event-card .icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .event-card .label {
+            color: #a0a0a0;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .event-card .value {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .footer p {
+            color: #a0a0a0;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .footer .copyright {
+            color: #d4af37;
+            font-size: 13px;
+        }
+
+        .warning-box {
+            background: rgba(244, 67, 54, 0.1);
+            border: 1px solid rgba(244, 67, 54, 0.4);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .warning-box h4 {
+            color: #ff8a80;
+            margin-bottom: 10px;
+        }
+
+        .warning-box p {
+            color: #ffcdd2;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #d4af37, #f4e4bc);
+            color: #1a1a2e;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        @media print {
+            body {
+                background: white !important;
+                color: #333 !important;
+                padding: 20px !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .container {
+                background: white !important;
+                border: 2px solid #d4af37 !important;
+                box-shadow: none !important;
+                max-width: 100% !important;
+            }
+
+            .header h1, .section-title, .info-box h4, .url-box .url {
+                color: #b8860b !important;
+                -webkit-text-fill-color: #b8860b !important;
+            }
+
+            .header h2 {
+                color: #b8860b !important;
+                -webkit-text-fill-color: #b8860b !important;
+                background: none !important;
+            }
+
+            .header .year {
+                color: #b8860b !important;
+            }
+
+            .step-card {
+                background: #f9f9f9 !important;
+                border-left: 4px solid #b8860b !important;
+            }
+
+            .step-card li, .info-box p, .event-card .value, .step-card h3 {
+                color: #333 !important;
+            }
+
+            .event-card, .url-box, .info-box {
+                background: #f5f5f5 !important;
+                border: 1px solid #ddd !important;
+            }
+
+            .warning-box {
+                background: #fff3f3 !important;
+                border: 1px solid #f44336 !important;
+            }
+
+            .warning-box h4 {
+                color: #c62828 !important;
+            }
+
+            .warning-box p {
+                color: #333 !important;
+            }
+
+            .print-btn {
+                display: none !important;
+            }
+
+            .section-title .icon {
+                background: #b8860b !important;
+                color: white !important;
+            }
+
+            .footer p, .event-card .label, .url-box .label, .header .subtitle {
+                color: #666 !important;
+            }
+
+            .footer .copyright {
+                color: #b8860b !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-btn" onclick="window.print()">📥 Save as PDF</button>
+
+    <div class="container">
+        <div class="header">
+            <div class="trophy">🏆</div>
+            <h1>Media Challenge</h1>
+            <h2>Alumni Awards</h2>
+            <div class="year">2025</div>
+            <p class="subtitle">Official Voter Guide</p>
+        </div>
+
+        <div class="url-box">
+            <div class="label">VOTING WEBSITE</div>
+            <div class="url">vote.mcialumni.com</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">1</span>
+                <span>How to Register</span>
+            </div>
+            <div class="step-card">
+                <h3>Create Your Account</h3>
+                <ul>
+                    <li>Visit <strong>vote.mcialumni.com</strong></li>
+                    <li>Click "Don't have an account? Register here"</li>
+                    <li>Enter your <strong>Username</strong> (choose your own, e.g., ebahindi)</li>
+                    <li>Enter your <strong>First Name</strong> (e.g., Emmanuel)</li>
+                    <li>Enter your <strong>Last Name</strong> (e.g., Bahindi)</li>
+                    <li>Create a <strong>Password</strong> (minimum 8 characters)</li>
+                    <li>Confirm your password</li>
+                    <li>Click <strong>"Create Account"</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">2</span>
+                <span>How to Login</span>
+            </div>
+            <div class="step-card">
+                <h3>Access Your Account</h3>
+                <ul>
+                    <li>Visit <strong>vote.mcialumni.com</strong></li>
+                    <li>Enter your <strong>Username</strong></li>
+                    <li>Enter your <strong>Password</strong></li>
+                    <li>Click <strong>"Cast Your Vote"</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                <span class="icon">3</span>
+                <span>How to Vote</span>
+            </div>
+            <div class="step-card">
+                <h3>Cast Your Votes</h3>
+                <ul>
+                    <li>Browse through the award categories</li>
+                    <li>Select your preferred nominee for each category</li>
+                    <li>Review your selections</li>
+                    <li>Click <strong>"Submit Vote"</strong> to confirm</li>
+                    <li>You will see a confirmation message when successful</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>⚠️ Important Rules</h4>
+            <p>
+                • You can only vote <strong>once</strong> per category<br>
+                • You must use the <strong>same device</strong> you registered with<br>
+                • Votes are <strong>final</strong> and cannot be changed after submission<br>
+                • Your vote is <strong>confidential</strong> and secure
+            </p>
+        </div>
+
+        <div class="info-box">
+            <h4>💡 Tips for Voting</h4>
+            <p>
+                • Remember your username and password<br>
+                • Use a stable internet connection<br>
+                • Preview your ballot before submitting<br>
+                • Contact MCI IT Department if you need help
+            </p>
+        </div>
+
+        <div class="event-details">
+            <div class="event-card">
+                <div class="icon">📅</div>
+                <div class="label">DATE</div>
+                <div class="value">Sunday, 14th December 2025</div>
+            </div>
+            <div class="event-card">
+                <div class="icon">⏰</div>
+                <div class="label">TIME</div>
+                <div class="value">3:00 PM</div>
+            </div>
+            <div class="event-card">
+                <div class="icon">📍</div>
+                <div class="label">VENUE</div>
+                <div class="value">Tirupati Mazima Mall, Kabalagala</div>
+            </div>
+            <div class="event-card">
+                <div class="icon">🌐</div>
+                <div class="label">WEBSITE</div>
+                <div class="value">mciug.org</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Your vote matters! Make your voice heard.</p>
+            <p class="copyright">© 2025 Media Challenge Initiative. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        // Auto-print hint
+        console.log('To save as PDF: Click "Save as PDF" button or press Ctrl+P (Cmd+P on Mac) and select "Save as PDF"');
+    </script>
+</body>
+</html>

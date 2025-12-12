@@ -84,13 +84,6 @@ if (isset($_GET['error'])) {
                 <input type="password" class="form-control" name="confirm_password" id="confirmPasswordInput" placeholder="Confirm Password" required>
                 <span class="fa fa-lock form-control-feedback"></span>
             </div>
-            <div class="form-group has-feedback">
-                <input type="text" class="form-control" name="secret_code" id="secretCodeInput" placeholder="Enter Secret Code" required autocomplete="off">
-                <span class="fa fa-key form-control-feedback"></span>
-                <p class="help-block" style="color: var(--white-muted); font-size: 11px; margin-top: 5px;">
-                    <i class="fa fa-info-circle"></i> The secret code is provided by Media Challenge Initiative
-                </p>
-            </div>
             <div class="row">
                 <div class="col-xs-12">
                     <button type="submit" class="btn btn-primary btn-block btn-login" name="signup" id="signupBtn">

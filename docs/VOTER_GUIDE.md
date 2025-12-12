@@ -1,158 +1,107 @@
 # VOTER'S GUIDE
-## Awards Night 2025 - Alumni Nominations
+## MCI Alumni Awards 2025
 
 ---
-
-![Media Challenge Initiative](logo-placeholder)
 
 # Welcome, Esteemed Alumni!
 
-Thank you for participating in the **2025 Media Challenge Awards** voting. This guide will walk you through the simple process of casting your vote for your favorite nominees.
+Thank you for participating in the **2025 Media Challenge Awards** voting. This guide will walk you through the simple process of registering and casting your vote for your favorite nominees.
 
 ---
 
-## YOUR VOTING CREDENTIALS
+## GETTING STARTED
 
-Before you begin, make sure you have your voting credentials:
-
-| Credential | Format | Example |
-|------------|--------|---------|
-| **Voter ID** | MCIA + Initials + 25 | `MCIAEBA25` |
-| **Password** | Same for everyone | `AwardsNight2025` |
-
-> **Note:** Your Voter ID was sent to you by the event organizers. If you haven't received it, please contact the registration desk.
-
----
-
-## HOW TO VOTE - STEP BY STEP
-
-### STEP 1: Access the Voting Portal
-
-Open your web browser and go to the voting website:
+### Voting Website
 ```
-http://[Event Network Address]/alumnivotingsystem/
+https://vote.mcialumni.com
 ```
 
-You will see the login page with the Media Challenge Awards branding.
+### What You Need
+- A device (phone, tablet, or computer)
+- Internet connection
+- Your chosen username and password
 
 ---
 
-### STEP 2: Sign In
+## HOW TO REGISTER
 
-![Login Screen](login-placeholder)
+### Step 1: Go to the Voting Website
+Open your web browser and visit: **vote.mcialumni.com**
 
-1. Enter your **Voter ID** in the first field
-   - Example: `MCIAEBA25`
+### Step 2: Click Register
+Click on **"Don't have an account? Register here"**
 
-2. Enter the **Password** in the second field
-   - Password: `AwardsNight2025`
+### Step 3: Fill in Your Details
 
-3. Click the **"Cast Your Vote"** button
+| Field | What to Enter | Example |
+|-------|---------------|---------|
+| **Username** | Choose your own unique username | `ebahindi` |
+| **First Name** | Your first name | `Emmanuel` |
+| **Last Name** | Your last name | `Bahindi` |
+| **Password** | Create a password (min 8 characters) | `MySecure123` |
+| **Confirm Password** | Re-enter your password | `MySecure123` |
 
-> **Important:** You can only log in from ONE device. Once you log in, that device is linked to your account for security.
+### Step 4: Create Account
+Click **"Create Account"** and you're done!
 
----
-
-### STEP 3: Review the Categories
-
-After logging in, you'll see the voting ballot with all award categories:
-
-1. **Excellence in Communication**
-2. **Outstanding Print Journalism**
-3. **Exceptional TV Broadcast Achievement**
-4. **Exceptional Radio Broadcast Achievement**
-5. **Distinguished Photography**
-6. **Media Innovation**
-
-Each category shows the nominated candidates with their photos.
+> **Remember your username and password - you'll need them to login!**
 
 ---
 
-### STEP 4: Make Your Selections
+## HOW TO LOGIN
 
-![Voting Screen](voting-placeholder)
+### Step 1: Go to the Voting Website
+Visit: **vote.mcialumni.com**
 
+### Step 2: Enter Your Credentials
+
+1. Enter your **Username**
+2. Enter your **Password**
+3. Click **"Cast Your Vote"**
+
+---
+
+## HOW TO VOTE
+
+### Step 1: Browse Categories
+After logging in, you'll see all the award categories with their nominees.
+
+### Step 2: Make Your Selections
 For each category:
+1. View the nominees and their photos
+2. Click **"View Platform"** to read about their achievements
+3. Select your preferred nominee by clicking on them
+4. The selection will be highlighted when chosen
 
-1. **View the nominees** - See their photos and names
+### Step 3: Preview Your Ballot
+1. Click **"Preview Ballot"** to review all your choices
+2. Make sure everything is correct
+3. Go back to make changes if needed
 
-2. **Read about them** - Click **"View Platform"** to see their achievements and bio
-
-3. **Select your choice** - Click on the circle next to your preferred nominee
-   - The circle will turn green when selected
-   - You can only select ONE nominee per category
-
-4. **Change your mind?** - Click **"Reset Selection"** to clear and choose again
-
-**Progress Tracker:** Watch the progress bar at the bottom to see how many categories you've voted in!
-
----
-
-### STEP 5: Preview Your Ballot
-
-Before submitting, you can review all your choices:
-
-1. Click the **"Preview Ballot"** button
-
-2. A window will show all your selections
-
-3. Review each category and your chosen nominee
-
-4. If everything looks correct, proceed to submit
-   - If you need to change something, click "Go Back"
-
----
-
-### STEP 6: Submit Your Vote
-
-![Submit Screen](submit-placeholder)
-
-When you're ready:
-
-1. Click the **"Submit Vote"** button
-
+### Step 4: Submit Your Vote
+1. Click **"Submit Vote"**
 2. Wait for the confirmation
-
-3. **CELEBRATE!** 🎉
-   - You'll see a beautiful confetti animation
-   - Your vote has been securely recorded
-
-4. You'll be automatically logged out after 10 seconds
-   - Or click "Exit Now" to logout immediately
-
----
-
-### STEP 7: View Your Ballot (Optional)
-
-Want to see your submitted votes again?
-
-1. Log in with your Voter ID and password
-
-2. You'll see a "Thank You" message
-
-3. Your complete ballot will be displayed showing:
-   - Each category you voted in
-   - The nominee you selected
-   - The time you submitted your vote
-
-4. Click "Logout" when done
+3. **Celebrate!** 🎉 Your vote has been recorded!
 
 ---
 
 ## IMPORTANT RULES
 
-### One Vote Per Person
+### ✅ One Vote Per Person
 - Each voter can only submit ONE ballot
 - After voting, you cannot vote again
-- You CAN log in to view your ballot
+- You CAN log in to view your submitted ballot
 
-### One Device Per Voter
+### ✅ One Device Per Voter
 - Your first login device is linked to your account
-- You cannot vote from a different device
-- If you have device issues, contact an administrator
+- You must use the same device to vote
+- This prevents duplicate voting
 
-### Vote Securely
-- Your vote is encrypted and secure
+### ✅ Votes Are Final
+- Once submitted, votes cannot be changed
+- Use the Preview feature to review before submitting
+
+### ✅ Your Vote Is Secret
 - No one can see who you voted for
 - Results are tallied automatically
 
@@ -160,55 +109,48 @@ Want to see your submitted votes again?
 
 ## FREQUENTLY ASKED QUESTIONS
 
-### Q: I forgot my Voter ID. What do I do?
-**A:** Contact the registration desk or event organizers. They can look up your Voter ID using your name.
+### Q: I forgot my username. What do I do?
+**A:** Contact the MCI IT Department. They can look up your account using your name.
 
-### Q: The password doesn't work. Help!
-**A:** Make sure you're typing exactly: `AwardsNight2025` (case-sensitive). If it still doesn't work, ask an admin to reset your password.
+### Q: My password doesn't work.
+**A:** Make sure you're typing it correctly (passwords are case-sensitive). If it still doesn't work, contact support to reset it.
 
-### Q: I started voting on my phone but want to continue on my laptop.
-**A:** For security, you must use the same device you started with. If needed, ask an admin to clear your device binding.
+### Q: Can I vote from a different device?
+**A:** No. For security, you must use the same device you first logged in with.
 
 ### Q: Can I change my vote after submitting?
-**A:** No. Once submitted, your vote is final and cannot be changed. Please use the Preview feature to review before submitting.
-
-### Q: I accidentally closed the browser while voting.
-**A:** Don't worry! Your session is still active. Open the browser again and go to the voting page. If you hadn't submitted yet, you can continue voting.
+**A:** No. Once submitted, your vote is final. Please review carefully before submitting.
 
 ### Q: How do I know my vote was counted?
-**A:** After submitting, you'll see a success message with confetti. You can also log in again to view your recorded ballot.
+**A:** You'll see a success message with confetti after submitting. You can also log in again to view your recorded ballot.
 
 ### Q: Can I skip a category?
-**A:** Yes. You don't have to vote in every category, but we encourage you to vote in as many as you'd like.
-
-### Q: What if the page shows an error?
-**A:** Refresh the page. If the problem persists, contact the technical support team.
+**A:** Yes. You don't have to vote in every category.
 
 ---
 
 ## QUICK REFERENCE CARD
 
-Cut out and keep this handy reference:
-
 ```
 ┌─────────────────────────────────────────┐
-│     AWARDS NIGHT 2025 - QUICK CARD     │
+│     MCI ALUMNI AWARDS 2025              │
+│          VOTING QUICK CARD              │
 ├─────────────────────────────────────────┤
 │                                         │
-│  Voting Website:                        │
-│  http://[server]/alumnivotingsystem/    │
+│  Website: vote.mcialumni.com            │
 │                                         │
-│  Your Voter ID: ____________________    │
+│  To Register:                           │
+│  • Choose a username                    │
+│  • Enter your first & last name         │
+│  • Create a password (8+ characters)    │
 │                                         │
-│  Password: AwardsNight2025              │
-│                                         │
-│  Steps:                                 │
-│  1. Enter Voter ID & Password           │
+│  To Vote:                               │
+│  1. Login with username & password      │
 │  2. Select one nominee per category     │
 │  3. Preview your ballot                 │
 │  4. Submit and celebrate! 🎉            │
 │                                         │
-│  Need Help? Contact registration desk   │
+│  Need Help? Contact MCI IT Department   │
 │                                         │
 └─────────────────────────────────────────┘
 ```
@@ -229,39 +171,22 @@ Cut out and keep this handy reference:
 - ✅ Mozilla Firefox
 - ✅ Microsoft Edge
 
-### Network
-- Connect to the event WiFi network
-- Ensure stable connection before voting
-
 ---
 
 ## NEED HELP?
 
-If you experience any issues:
-
-1. **At the Event:**
-   - Visit the Registration/Help Desk
-   - Look for volunteers with "TECH SUPPORT" badges
-
-2. **Technical Issues:**
-   - Device problems
-   - Login errors
-   - Page not loading
-
-3. **Credential Issues:**
-   - Forgot Voter ID
-   - Password not working
-   - Need account verification
+If you experience any issues, contact the **MCI IT Department** for assistance.
 
 ---
 
-## VOTING TIMELINE
+## EVENT DETAILS
 
-| Time | Activity |
-|------|----------|
-| Voting Opens | [Start Time] |
-| Voting Closes | [End Time] |
-| Results Announced | During Awards Ceremony |
+| | |
+|---|---|
+| **Date** | Sunday, 14th December 2025 |
+| **Time** | 3:00 PM |
+| **Venue** | Tirupati Mazima Mall, Kabalagala |
+| **Website** | mciug.org |
 
 ---
 
@@ -274,13 +199,13 @@ Your vote matters! By participating, you're helping recognize the outstanding ac
 ---
 
 *Media Challenge Initiative*
-*Awards Night 2025*
-*Sunday, December 14th | 3:00 PM*
-*Tirupati Mazima Mall, Kabalagala*
+*Alumni Awards 2025*
+
+© 2025 Media Challenge Initiative. All rights reserved.
 
 ---
 
 ### Document Information
-- Version: 1.0
-- Last Updated: December 10, 2025
-- For: Registered Voters
+- Version: 2.0
+- Last Updated: December 12, 2025
+- For: All Registered Voters

@@ -86,20 +86,16 @@
             <?php unset($_SESSION['success']); ?>
         <?php endif; ?>
 
-        <p class="login-box-msg">Sign in with your Voter ID to cast your vote</p>
+        <p class="login-box-msg">Sign in with your username to cast your vote</p>
 
         <form action="login.php" method="POST" id="loginForm">
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" name="voter" id="voterInput" placeholder="Voter ID or Full Name (e.g. Moses Bahindi)" required autocomplete="off">
+                <input type="text" class="form-control" name="username" id="usernameInput" placeholder="Enter your Username" required autocomplete="off">
                 <span class="fa fa-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
                 <input type="password" class="form-control" name="password" id="passwordInput" placeholder="Enter your Password" required>
                 <span class="fa fa-lock form-control-feedback"></span>
-            </div>
-            <div class="form-group has-feedback">
-                <input type="text" class="form-control" name="secret_code" id="secretCodeInput" placeholder="Enter Secret Code" required autocomplete="off">
-                <span class="fa fa-key form-control-feedback"></span>
             </div>
             <div class="row">
                 <div class="col-xs-12">
@@ -308,11 +304,10 @@
 $(function(){
     // Form submission with loading state
     $('#loginForm').on('submit', function(e) {
-        var voterInput = $('#voterInput').val().trim();
+        var usernameInput = $('#usernameInput').val().trim();
         var passwordInput = $('#passwordInput').val();
-        var secretCode = $('#secretCodeInput').val().trim();
 
-        if(!voterInput || !passwordInput || !secretCode) {
+        if(!usernameInput || !passwordInput) {
             e.preventDefault();
             $('.login-box-body').addClass('shake');
             setTimeout(function() {

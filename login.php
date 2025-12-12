@@ -23,29 +23,14 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 if (isset($_POST['login'])) {
-    $voterInput = trim($_POST['voter']);
+    $username = trim($_POST['username']);
     $password = $_POST['password'];
-    $secretCode = isset($_POST['secret_code']) ? trim($_POST['secret_code']) : '';
     $deviceFingerprint = generateDeviceFingerprint();
     $deviceInfo = getDeviceInfo();
 
     // Validate input
-    if (empty($voterInput) || empty($password)) {
-        $_SESSION['error'] = 'Please enter both Voter ID and Password';
-        header('Location: index.php');
-        exit();
-    }
-
-    // Validate secret code (REQUIRED)
-    if (empty($secretCode)) {
-        $_SESSION['error'] = 'Secret code is required. Please enter the secret code provided by Media Challenge Initiative.';
-        header('Location: index.php');
-        exit();
-    }
-
-    if (!validateSecretCode($secretCode)) {
-        logError("Invalid secret code login attempt from IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'Unknown') . " - Input: $voterInput", 'security');
-        $_SESSION['error'] = 'Invalid secret code. Please contact Media Challenge Initiative for the correct code.';
+    if (empty($username) || empty($password)) {
+        $_SESSION['error'] = 'Please enter both Username and Password';
         header('Location: index.php');
         exit();
     }
@@ -64,12 +49,10 @@ if (isset($_POST['login'])) {
         $deviceCheck->close();
     }
 
-    // Try to find voter by Voter ID first, then by firstname + lastname combination
+    // Find voter by username
     $row = null;
-
-    // Method 1: Search by exact Voter ID
-    $stmt = $conn->prepare("SELECT id, voters_id, password, firstname, lastname, device_fingerprint, has_voted, is_logged_in FROM voters WHERE voters_id = ? LIMIT 1");
-    $stmt->bind_param("s", $voterInput);
+    $stmt = $conn->prepare("SELECT id, voters_id, username, password, firstname, lastname, device_fingerprint, has_voted, is_logged_in FROM voters WHERE username = ? LIMIT 1");
+    $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -78,51 +61,16 @@ if (isset($_POST['login'])) {
     }
     $stmt->close();
 
-    // Method 2: If not found by Voter ID, try firstname + lastname (case insensitive)
     if (!$row) {
-        // Check if input contains a space (likely "Firstname Lastname")
-        if (strpos($voterInput, ' ') !== false) {
-            $nameParts = explode(' ', $voterInput, 2);
-            $firstName = trim($nameParts[0]);
-            $lastName = isset($nameParts[1]) ? trim($nameParts[1]) : '';
-
-            if (!empty($firstName) && !empty($lastName)) {
-                $stmt = $conn->prepare("SELECT id, voters_id, password, firstname, lastname, device_fingerprint, has_voted, is_logged_in FROM voters WHERE LOWER(firstname) = LOWER(?) AND LOWER(lastname) = LOWER(?) LIMIT 1");
-                $stmt->bind_param("ss", $firstName, $lastName);
-                $stmt->execute();
-                $result = $stmt->get_result();
-
-                if ($result->num_rows > 0) {
-                    $row = $result->fetch_assoc();
-                }
-                $stmt->close();
-            }
-        }
-    }
-
-    // Method 3: Try searching by firstname or lastname alone
-    if (!$row) {
-        $stmt = $conn->prepare("SELECT id, voters_id, password, firstname, lastname, device_fingerprint, has_voted, is_logged_in FROM voters WHERE LOWER(firstname) = LOWER(?) OR LOWER(lastname) = LOWER(?) LIMIT 1");
-        $stmt->bind_param("ss", $voterInput, $voterInput);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-        }
-        $stmt->close();
-    }
-
-    if (!$row) {
-        logError("Failed login attempt - Invalid Voter ID/Name: $voterInput from IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'Unknown'), 'security');
-        $_SESSION['error'] = 'Invalid Voter ID or Name. Please check and try again.<br><small>Hint: Your Voter ID format is like MCIAMBA25</small>';
+        logError("Failed login attempt - Invalid username: $username from IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'Unknown'), 'security');
+        $_SESSION['error'] = 'Invalid username. Please check and try again.';
         header('Location: index.php');
         exit();
     }
 
     // Check if device was used by a different voter
     if ($existingDevice && $existingDevice['voter_id'] != $row['id']) {
-        logError("Device reuse attempt - Voter: $voterInput, Original voter: " . $existingDevice['voters_id'], 'security');
+        logError("Device reuse attempt - Username: $username, Original voter: " . $existingDevice['voters_id'], 'security');
         $_SESSION['error'] = 'This device has already been used by another voter (' .
             htmlspecialchars($existingDevice['firstname']) . ' ' .
             htmlspecialchars(substr($existingDevice['lastname'], 0, 1)) . '...). ' .
@@ -197,7 +145,7 @@ if (isset($_POST['login'])) {
         header('Location: home.php');
         exit();
     } else {
-        logError("Failed login attempt - Wrong password for: $voterInput (Voter ID: " . $row['voters_id'] . ") from IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'Unknown'), 'security');
+        logError("Failed login attempt - Wrong password for username: $username from IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'Unknown'), 'security');
         $_SESSION['error'] = 'Incorrect password. Please try again.';
     }
 } else {

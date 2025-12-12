@@ -16,7 +16,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 // Include database connection
-include 'includes/conn.php';
+include __DIR__ . '/conn.php';
 
 // Check if admin is logged in
 if (!isset($_SESSION['admin']) || empty($_SESSION['admin'])) {

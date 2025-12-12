@@ -18,7 +18,6 @@ if (isset($_POST['signup'])) {
     $lastname = trim($_POST['lastname']);
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirm_password'];
-    $secretCode = trim($_POST['secret_code']);
 
     // Validation array
     $errors = [];
@@ -54,22 +53,8 @@ if (isset($_POST['signup'])) {
         $errors[] = 'Passwords do not match';
     }
 
-    if (empty($secretCode)) {
-        $errors[] = 'Secret code is required';
-    }
-
-    // CRITICAL: Validate secret code server-side
-    if (!validateSecretCode($secretCode)) {
-        // Log the failed attempt
-        logError("Invalid secret code attempt from IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'Unknown') . " - Username: $username", 'security');
-
-        $_SESSION['error'] = 'Invalid secret code. Please contact Media Challenge Initiative for the correct code.';
-        header('Location: signup.php');
-        exit();
-    }
-
     // Check if username already exists
-    $checkStmt = $conn->prepare("SELECT id FROM voters WHERE voters_id = ?");
+    $checkStmt = $conn->prepare("SELECT id FROM voters WHERE username = ?");
     $checkStmt->bind_param("s", $username);
     $checkStmt->execute();
     $checkResult = $checkStmt->get_result();
@@ -93,14 +78,14 @@ if (isset($_POST['signup'])) {
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT, ['cost' => PASSWORD_COST]);
 
     // Insert new voter using prepared statement
-    $stmt = $conn->prepare("INSERT INTO voters (voters_id, password, firstname, lastname, photo, created_at) VALUES (?, ?, ?, ?, '', NOW())");
-    $stmt->bind_param("ssss", $voterId, $hashedPassword, $firstname, $lastname);
+    $stmt = $conn->prepare("INSERT INTO voters (voters_id, username, password, firstname, lastname, photo, created_at) VALUES (?, ?, ?, ?, ?, '', NOW())");
+    $stmt->bind_param("sssss", $voterId, $username, $hashedPassword, $firstname, $lastname);
 
     if ($stmt->execute()) {
         // Log successful registration
-        logError("New voter registered: $voterId ($firstname $lastname) from IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'Unknown'), 'registration');
+        logError("New voter registered: $voterId - $username ($firstname $lastname) from IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'Unknown'), 'registration');
 
-        $_SESSION['success'] = 'Account created successfully!<br><strong>Your Voter ID:</strong> ' . htmlspecialchars($voterId) . '<br><strong>Remember this ID to login!</strong>';
+        $_SESSION['success'] = 'Account created successfully!<br>You can now login with your username <strong>' . htmlspecialchars($username) . '</strong> and password.';
         header('Location: index.php');
         exit();
     } else {

@@ -4,9 +4,9 @@ Secure PHP voting system for **Media Challenge Initiative Alumni Awards 2025**.
 
 ## Features
 
-- **Secret Code Authentication** - Voters must enter a shared secret code to register and login
+- **Simple Username/Password Login** - Easy authentication for all voters
 - **Device Fingerprinting** - Each voter is bound to a single device to prevent multiple voting
-- **Auto-Generated Voter IDs** - Format: `MCIA{FirstLetter}{First2OfLast}25` (e.g., John Balungi → MCIAJBA25)
+- **Auto-Generated Voter IDs** - System generates unique IDs for admin tracking (e.g., Emmanuel Bahindi → MCIAEBA25)
 - **Secure Password Hashing** - BCrypt with cost factor 12
 - **SQL Injection Protection** - All queries use prepared statements
 - **Session Security** - Token-based sessions with automatic timeout
@@ -35,10 +35,7 @@ Secure PHP voting system for **Media Challenge Initiative Alumni Awards 2025**.
 3. **Configure database connection**
    Edit `includes/conn.php` and `admin/includes/conn.php` with your database credentials.
 
-4. **Configure the secret code**
-   Edit `includes/config.php` and change `VOTER_SECRET_CODE`.
-
-5. **Set file permissions**
+4. **Set file permissions**
    ```bash
    chmod -R 755 /path/to/project
    chmod 755 logs/ images/
@@ -51,18 +48,49 @@ Secure PHP voting system for **Media Challenge Initiative Alumni Awards 2025**.
 - **Username:** `admin`
 - **Password:** `admin123`
 
-### Voter Login
-- **Secret Code:** `MCI2025AWARDS` (configurable)
-- **Default Password:** `AwardsNight2025`
+### Voter Registration & Login
+Voters can register and login using:
+- **Username** - Chosen during registration
+- **Password** - Created during registration
+
+## How to Vote
+
+### Step 1: Register
+1. Go to the voting website
+2. Click "Don't have an account? Register here"
+3. Fill in:
+   - Username (choose your own)
+   - First Name
+   - Last Name
+   - Password (minimum 8 characters)
+   - Confirm Password
+4. Click "Create Account"
+
+### Step 2: Login
+1. Enter your Username
+2. Enter your Password
+3. Click "Cast Your Vote"
+
+### Step 3: Vote
+1. Browse the award categories
+2. Select your preferred candidate for each position
+3. Submit your votes
+4. You will receive a confirmation once your votes are recorded
 
 ## Security Features
 
-- Secret Code Authentication
-- Device Fingerprinting & Binding
+- Device Fingerprinting & Binding (one device per voter)
 - Prepared Statements (SQL Injection Prevention)
 - BCrypt Password Hashing
 - Session Token Validation
 - Comprehensive Error Logging
+
+## Database Updates for Production
+
+If upgrading from a previous version, run this SQL:
+```sql
+ALTER TABLE voters ADD COLUMN username VARCHAR(50) NULL AFTER voters_id;
+```
 
 ## License
 
