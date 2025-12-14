@@ -67,4 +67,3 @@ if (!isset($_SESSION['admin_created'])) {
     session_regenerate_id(true);
     $_SESSION['admin_created'] = time();
 }
-?>

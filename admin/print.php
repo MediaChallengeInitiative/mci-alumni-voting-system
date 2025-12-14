@@ -4,6 +4,9 @@
  * Uses TCPDF library for PDF generation
  */
 
+// Start output buffering to prevent "headers already sent" errors
+ob_start();
+
 // Error handling
 error_reporting(E_ALL);
 ini_set('display_errors', 0);
@@ -85,6 +88,9 @@ if (!file_exists($tcpdfPath)) {
 }
 
 require_once($tcpdfPath);
+
+// Clean any output that may have been generated
+ob_end_clean();
 
 try {
     $pdf = new TCPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
